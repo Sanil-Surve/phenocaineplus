@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PhenoCaine Plus - Intracameral Injection</title>
+    <style>
+      @keyframes zoomInOut {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .zoom-animation {
+        width: 300px;
+        display: block;
+        float: inline-end;
+        cursor: pointer;
+        animation: zoomInOut 2s ease-in-out infinite;
+      }
+
+      .info-link {
+        color: blue;
+        text-decoration: underline;
+        font-weight: 500;
+        display: inline-block;
+        transition: transform 0.3s ease;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin-bottom: 15px;
+      }
+      .info-link:hover {
+        /* transform: scale(1.1); */
+        cursor: pointer;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #fff;
+        color: #333;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
+
+      .eyeball-left {
+        position: absolute;
+        flex: 1;
+        max-width: 300px;
+      }
+
+      .eyeball-left img {
+        width: 100%;
+        display: block;
+      }
+
+      .main-title {
+        flex: 3;
+        text-align: center;
+      }
+
+      .main-title img {
+        width: 500px;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
+
+      .subtitle {
+        text-align: center;
+        margin-top: 10px;
+      }
+
+      .highlight {
+        color: white;
+        background-color: #8e24aa;
+        display: inline-block;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .content {
+        margin-top: 30px;
+      }
+
+      .bullet-points {
+        margin-top: 20px;
+      }
+
+      .bullet-points li {
+        margin-bottom: 10px;
+      }
+
+      .centered-images img {
+        width: 600px;
+        display: block;
+        margin: 0 auto 20px;
+      }
+
+      /* Modal */
+      #videoModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #videoModal video {
+        max-width: 90%;
+        max-height: 90%;
+      }
+
+      #pdfModal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+      }
+      #closeBtn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        background-color: red;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+
+      #closeButton {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        color: white;
+        background-color: red;
+        border: none;
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header section with eyeball on left -->
+    <div class="header">
+      <div class="eyeball-left">
+        <img src="assets/01.png" alt="eyeball" class="zoom-animation" />
+      </div>
+      <div class="main-title">
+        <img src="assets/02.png" alt="PhenoCaine Plus Logo" />
+        <img src="assets/adopt.png" alt="Adopt" />
+        <div class="subtitle">
+          <p>(Tropicamide 0.02% + Phenylephrine 0.31% + Lidocaine 1%)</p>
+          <h3 class="highlight">Steady Pupil, Stable Iris, Smoother Surgery</h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bullet points -->
+    <div style="display: flex">
+      <div style="width: 50%">
+        <ul class="bullet-points">
+          <li>
+            ✅ Maintains <strong>STABLE MYDRIASIS</strong> in all situations
+          </li>
+          <li>✅ Prevents <strong>UNEXPECTED PUPIL CONSTRICTION</strong></li>
+          <li>✅ Reduces risk of <strong>IRIS PROLAPSE & DAMAGE</strong></li>
+          <li>
+            ✅ Protects from mechanical
+            <strong>PHACO-PROBE STIMULATION</strong> &
+            <strong>UNSTABLE FLUID DYNAMICS</strong>
+          </li>
+          <li>
+            ✅ Provides
+            <strong>SUSTAINED ANAESTHESIA & PAIN CONTROL</strong> during & after
+            surgery
+          </li>
+          <li>✅ Pupil dilation <strong>POST - PCR VITRECTOMY</strong></li>
+        </ul>
+        <img
+          src="assets/03.png"
+          alt="PhenoCaine Plus - Intracameral Injection"
+          style="width: 80%; display: block; margin: 0 20px"
+        />
+      </div>
+      <div style="display: flex; width: 50%; margin-right: 10px; padding: 30px">
+        <img
+          src="assets/05.png"
+          alt="mm"
+          style="
+            width: 300px;
+            display: block;
+            right: 0;
+            cursor: pointer;
+            float: inline-end;
+            /* margin-left: 100px; */
+          "
+          class="zoom-animation"
+        />
+        <div
+          style="
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            bottom: 34px;
+            /* right: 25px; */
+            margin: 0 12px;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <a onclick="openModal2(); return false;" class="info-link">
+            For more information
+          </a>
+
+          <a href="#" onclick="openModal(); return false;"
+            ><img
+              src="assets/qrcode.png"
+              alt="PhenoCaine Plus - Intracameral Injection"
+              style="
+                width: 100px;
+                height: 100px;
+                display: block;
+                right: 0;
+                float: inline-end;
+              "
+            />
+          </a>
+        </div>
+
+        <img
+          src="assets/04.png"
+          alt="PhenoCaine Plus - Intracameral Injection"
+          style="
+            width: 70px;
+            height: 250px;
+            display: block;
+            right: 0;
+            float: inline-end;
+          "
+        />
+      </div>
+    </div>
+
+    <div id="videoModal">
+      <button id="closeBtn" onclick="closeModal()">X</button>
+      <video controls autoplay>
+        <source src="assets/phenochaineplus.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- <div id="pdfModal">
+      <button id="closeButton" onclick="closeModal2()">X</button>
+      <iframe
+        src="https://docs.google.com/gview?embedded=true&url=https://docexa.blob.core.windows.net/entod-ekka/artical.pdf"
+        width="100%"
+        height="100%"
+        style="border: none; width: 90%; margin: 50px auto; display: block"
+        allowfullscreen
+      ></iframe>
+    </div> -->
+
+    <!-- <div id="pdfModal">
+      <button id="closeButton" onclick="closeModal2()">X</button>
+      <canvas
+        id="pdf-canvas"
+        style="margin: 50px auto; display: block; max-width: 90%"
+      ></canvas>
+    </div> -->
+
+    <div id="pdfModal">
+      <button id="closeButton" onclick="closeModal2()">X</button>
+      <div
+        id="pdf-container"
+        style="
+          width: 90%;
+          height: 90%;
+          overflow-y: auto;
+          padding: 20px;
+          margin: 50px auto;
+          display: block;
+        "
+      ></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js"></script>
+    <script>
+      function openModal() {
+        document.getElementById("videoModal").style.display = "flex";
+      }
+
+      // function openModal2() {
+      //   document.getElementById("pdfModal").style.display = "flex";
+      // }
+
+      function closeModal() {
+        const modal = document.getElementById("videoModal");
+        const video = modal.querySelector("video");
+        video.pause();
+        modal.style.display = "none";
+      }
+
+      // function closeModal2() {
+      //   const modal = document.getElementById("pdfModal");
+      //   // const video = modal.querySelector("video");
+      //   // video.pause();
+      //   modal.style.display = "none";
+      // }
+
+      const pdfjsLib = window["pdfjs-dist/build/pdf"];
+      pdfjsLib.GlobalWorkerOptions.workerSrc =
+        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.worker.min.js";
+
+      function openModal2() {
+        document.getElementById("pdfModal").style.display = "flex";
+        renderPDF("assets/article.pdf"); // Update this path to your actual PDF
+      }
+
+      function renderPDF(pdfUrl) {
+        const container = document.getElementById("pdf-container");
+        container.innerHTML = ""; 
+
+        pdfjsLib
+          .getDocument(pdfUrl)
+          .promise.then((pdf) => {
+            for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+              pdf.getPage(pageNumber).then((page) => {
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                const scale = 1.5;
+                const viewport = page.getViewport({ scale: scale });
+
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+                canvas.style.display = "block";
+                canvas.style.margin = "20px auto";
+
+                container.appendChild(canvas);
+
+                const renderContext = {
+                  canvasContext: context,
+                  viewport: viewport,
+                };
+                page.render(renderContext);
+              });
+            }
+          })
+          .catch((err) => {
+            console.error("Error loading PDF:", err);
+            alert("Failed to load PDF.");
+          });
+      }
+
+      function closeModal2() {
+        document.getElementById("pdfModal").style.display = "none";
+        document.getElementById("pdf-container").innerHTML = ""; // Clear canvas
+      }
+    </script>
+  </body>
+</html>

@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <title>PhenoCaine Plus - Intracameral Injection</title>
     <style>
+      ::-webkit-scrollbar {
+        display: none;
+      }
       @keyframes zoomInOut {
         0% {
           transform: scale(1);
@@ -382,7 +385,7 @@
         const container = document.getElementById("pdf-container");
         container.innerHTML = "";
 
-        const pdfData = atob(base64Data); // decode base64 string
+        const pdfData = atob(base64Data); 
 
         const loadingTask = pdfjsLib.getDocument({ data: pdfData });
         loadingTask.promise
